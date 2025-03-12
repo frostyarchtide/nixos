@@ -47,6 +47,8 @@
     };
   };
 
+  hardware.bluetooth.enable = true;
+
   #############
   ### FONTS ###
   #############
@@ -77,6 +79,8 @@
     jack.enable = true;
   };
 
+  services.blueman.enable = true;
+
   #############
   ### USERS ###
   #############
@@ -90,11 +94,6 @@
   ### PROGRAMS ###
   ################
 
-  programs.hyprland.enable = true;
-
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-
   ###################
   ### ENVIRONMENT ###
   ###################
@@ -103,12 +102,13 @@
     systemPackages = with pkgs; [
       neovim
       wget
-      kitty
       waybar
       fuzzel
       librewolf
       fastfetch
       git
+      vencord
+      pavucontrol
     ];
 
     variables = {
