@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./hardware/nixos-laptop.nix
+    ./hardware/nixos-vm.nix
     ./audio.nix
     ./bluetooth.nix
     ./boot.nix
@@ -14,7 +14,7 @@
     ./version.nix
   ];
 
-  networking.hostName = "nixos-laptop";
+  networking.hostName = "nixos-vm";
 
   services.greetd.settings.default_session.command = lib.mkForce "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --remember-session --cmd Hyprland";
 
