@@ -17,7 +17,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprpanel }:
+  outputs = { self, nixpkgs, home-manager, hyprpanel } @inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -29,11 +29,13 @@
       nixosConfigurations = {
         nixos-laptop = lib.nixosSystem {
 	  inherit system;
+	  specialArgs.inputs = inputs;
 	  modules = [
 	    ./system/nixos-laptop.nix
 	    home-manager.nixosModules.home-manager {
 	      home-manager.useGlobalPkgs = true;
 	      home-manager.useUserPackages = true;
+	      home-manager.extraSpecialArgs.inputs = inputs;
 	      home-manager.users.frosty = {
 	        imports = [ ./home/nixos-laptop.nix ];
 	      };
