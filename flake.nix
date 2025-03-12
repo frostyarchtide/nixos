@@ -11,9 +11,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager }:
+  outputs = { self, nixpkgs, home-manager, hyprpanel }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -32,19 +36,6 @@
 	      home-manager.useUserPackages = true;
 	      home-manager.users.frosty = {
 	        imports = [ ./home/nixos-laptop.nix ];
-	      };
-	    }
-	  ];
-	};
-	nixos-vm = lib.nixosSystem {
-	  inherit system;
-	  modules = [
-	    ./system/nixos-vm.nix
-	    home-manager.nixosModules.home-manager {
-	      home-manager.useGlobalPkgs = true;
-	      home-manager.useUserPackages = true;
-	      home-manager.users.frosty = {
-	        imports = [ ./home/nixos-vm.nix ];
 	      };
 	    }
 	  ];
