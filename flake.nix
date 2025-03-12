@@ -36,19 +36,6 @@
 	    }
 	  ];
 	};
-	nixos-vm = lib.nixosSystem {
-	  inherit system;
-	  modules = [
-	    ./system/nixos-vm.nix
-	    home-manager.nixosModules.home-manager {
-	      home-manager.useGlobalPkgs = true;
-	      home-manager.useUserPackages = true;
-	      home-manager.users.frosty = {
-	        imports = [ ./home/nixos-vm.nix ];
-	      };
-	    }
-	  ];
-	};
       };
     };
 }
