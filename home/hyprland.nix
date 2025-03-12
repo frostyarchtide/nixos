@@ -21,6 +21,7 @@
 	"$mod, C, killactive"
 	"$mod, M, exit"
 	"$mod, D, exec, fuzzel"
+	"$mod, L, exec, hyprlock"
       ];
     };
   };
