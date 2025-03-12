@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -13,6 +13,8 @@
     ./users.nix
     ./version.nix
   ];
+
+  nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
 
   networking.hostName = "nixos-laptop";
 
