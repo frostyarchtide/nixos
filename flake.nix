@@ -26,13 +26,12 @@
         nixos-laptop = lib.nixosSystem {
 	  inherit system;
 	  modules = [
-	    ./configuration.nix
-	    ./hosts/nixos-laptop.nix
+	    ./system/nixos-laptop.nix
 	    home-manager.nixosModules.home-manager {
 	      home-manager.useGlobalPkgs = true;
 	      home-manager.useUserPackages = true;
 	      home-manager.users.frosty = {
-	        imports = [ ./home.nix ];
+	        imports = [ ./home/nixos-laptop.nix ];
 	      };
 	    }
 	  ];
