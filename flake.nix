@@ -11,13 +11,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprpanel } @inputs:
+  outputs = { self, nixpkgs, home-manager } @inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {

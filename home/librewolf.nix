@@ -16,6 +16,9 @@
       "privacy.sanitize.clearOnShutdown.hasMigratedToNewPrefs3" = true;
       "browser.download.useDownloadDir" = true;
       "browser.newtabpage.activity-stream.showSearch" = false;
+      "layout.css.prefers-color-scheme.content-override" = 0;
+      "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
+      "security.OCSP.require" = false;
     };
   };
 }
