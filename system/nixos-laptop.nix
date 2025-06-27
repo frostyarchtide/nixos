@@ -10,6 +10,7 @@
     ./gc.nix
     ./greetd.nix
     ./networking.nix
+    ./steam.nix
     ./users.nix
     ./version.nix
   ];
@@ -18,9 +19,12 @@
 
   services.greetd.settings.default_session.command = lib.mkForce "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --remember-session --cmd Hyprland";
 
+  nixpkgs.config.allowUnfree = true;
+
   environment = {
     systemPackages = with pkgs; [
       bluetui
+      discord
       neovim
       fastfetch
       git
