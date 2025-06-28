@@ -25,7 +25,6 @@
     systemPackages = with pkgs; [
       bluetui
       discord
-      neovim
       fastfetch
       git
     ];

@@ -10,6 +10,7 @@
     ./hyprlock.nix
     ./kitty.nix
     ./librewolf.nix
+    ./neovim.nix
     ./user.nix
   ];
 }
