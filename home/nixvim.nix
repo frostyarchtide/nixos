@@ -5,12 +5,11 @@
     inputs.nixvim.homeModules.nixvim
   ];
 
-  programs.nixvim.enable = true;
-#  imports = [
-#    inputs.nixvim.homeModules.nixvim
-#    inputs.nixvim.nixosModules.nixvim
-#    inputs.nixvim.nixDarwinModules.nixvim
-#  ];
-
-#  programs.nixvim.enable = true;
+  programs.nixvim = {
+    enable = true;
+    colorschemes.everforest.enable = true;
+    plugins.bufferline.enable = true;
+    plugins.lualine.enable = true;
+    plugins.web-devicons.enable = true;
+  };
 }

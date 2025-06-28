@@ -4,7 +4,7 @@
   programs.bash = {
     enable = true;
     bashrcExtra = ''
-      alias rebuild='nixos-rebuild switch --use-remote-sudo --flake ~/nixos#'
+      alias rebuild='nixos-rebuild switch --sudo --flake ~/nixos#'
     '';
   };
 
