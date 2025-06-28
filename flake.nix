@@ -1,4 +1,4 @@
-#################################
+# ################################
 ### NIXOS CONFIGURATION FLAKE ###
 #################################
 
@@ -17,26 +17,27 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-	config.allowUnfree = true;
+        config.allowUnfree = true;
       };
       lib = nixpkgs.lib;
     in {
       nixosConfigurations = {
         nixos-laptop = lib.nixosSystem {
-	  inherit system;
-	  modules = [
-	    ./system/nixos-laptop.nix
-	    home-manager.nixosModules.home-manager {
-	      home-manager.extraSpecialArgs.inputs = inputs;
-	      home-manager.users.frosty.imports = [ ./home/nixos-laptop.nix ];
-	    }
-	  ];
-	};
+          inherit system;
+          modules = [
+            ./system/nixos-laptop.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.extraSpecialArgs.inputs = inputs;
+              home-manager.users.frosty.imports = [ ./home/nixos-laptop.nix ];
+            }
+          ];
+        };
       };
     };
 }

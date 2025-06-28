@@ -3,10 +3,6 @@
 {
   programs.fuzzel = {
     enable = true;
-    settings = {
-      main = {
-        image-size-ratio = "1";
-      };
-    };
+    settings = { main = { image-size-ratio = "1"; }; };
   };
 }
