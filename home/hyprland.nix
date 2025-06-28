@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -57,4 +57,8 @@
       ];
     };
   };
+
+  home.packages = with pkgs; [
+    wl-clipboard
+  ];
 }

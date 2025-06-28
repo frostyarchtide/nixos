@@ -10,7 +10,7 @@
     ./hyprlock.nix
     ./kitty.nix
     ./librewolf.nix
-    ./neovim.nix
+    ./nixvim.nix
     ./ssh.nix
     ./user.nix
   ];
