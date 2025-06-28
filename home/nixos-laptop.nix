@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./bash.nix
     ./fonts.nix
     ./fuzzel.nix
     ./home-manager.nix
