@@ -10,6 +10,7 @@
     ./gc.nix
     ./greetd.nix
     ./networking.nix
+    ./nix-ld.nix
     ./steam.nix
     ./users.nix
     ./version.nix
