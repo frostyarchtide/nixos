@@ -25,6 +25,10 @@
       bufferline.enable = true;
       guess-indent.enable = true;
       lualine.enable = true;
+      treesitter = {
+        enable = true;
+        settings.highlight.enable = true;
+      };
       web-devicons.enable = true;
     };
   };
