@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   imports = [
@@ -20,9 +20,10 @@
   services.greetd.settings.default_session.command = lib.mkForce
     "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --remember-session --cmd Hyprland";
 
+  nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ];
   nixpkgs.config.allowUnfree = true;
 
   environment = {
-    systemPackages = with pkgs; [ bluetui discord fastfetch git ];
+    systemPackages = with pkgs; [ bluetui discord fastfetch git rust-bin.stable.latest.default ];
   };
 }

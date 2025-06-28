@@ -1,4 +1,4 @@
-# ################################
+#################################
 ### NIXOS CONFIGURATION FLAKE ###
 #################################
 
@@ -15,6 +15,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -29,6 +33,7 @@
       nixosConfigurations = {
         nixos-laptop = lib.nixosSystem {
           inherit system;
+          specialArgs.inputs = inputs;
           modules = [
             ./system/nixos-laptop.nix
             home-manager.nixosModules.home-manager
