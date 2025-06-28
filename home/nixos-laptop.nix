@@ -3,6 +3,7 @@
 {
   imports = [
     ./bash.nix
+    ./direnv.nix
     ./fonts.nix
     ./fuzzel.nix
     ./home-manager.nix
