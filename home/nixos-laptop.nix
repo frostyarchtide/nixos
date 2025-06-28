@@ -11,6 +11,7 @@
     ./kitty.nix
     ./librewolf.nix
     ./neovim.nix
+    ./ssh.nix
     ./user.nix
   ];
 }
