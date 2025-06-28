@@ -21,8 +21,11 @@
       wrap = false;
     };
     colorschemes.everforest.enable = true;
-    plugins.bufferline.enable = true;
-    plugins.lualine.enable = true;
-    plugins.web-devicons.enable = true;
+    plugins = {
+      bufferline.enable = true;
+      guess-indent.enable = true;
+      lualine.enable = true;
+      web-devicons.enable = true;
+    };
   };
 }
