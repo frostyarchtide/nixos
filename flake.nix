@@ -11,9 +11,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager } @inputs:
+  outputs = { self, nixpkgs, home-manager, nixvim } @inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -25,16 +29,10 @@
       nixosConfigurations = {
         nixos-laptop = lib.nixosSystem {
 	  inherit system;
-	  specialArgs.inputs = inputs;
 	  modules = [
 	    ./system/nixos-laptop.nix
 	    home-manager.nixosModules.home-manager {
-	      home-manager.useGlobalPkgs = true;
-	      home-manager.useUserPackages = true;
-	      home-manager.extraSpecialArgs.inputs = inputs;
-	      home-manager.users.frosty = {
-	        imports = [ ./home/nixos-laptop.nix ];
-	      };
+	      home-manager.users.frosty.imports = [ ./home/nixos-laptop.nix ];
 	    }
 	  ];
 	};
