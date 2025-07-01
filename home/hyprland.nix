@@ -4,13 +4,26 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = [ "DP-1, 3440x1440@60, 0x0, 1" "eDP-1, disable" ];
+      monitor = [
+        "DP-1, 3440x1440@60, 0x0, 1"
+        "eDP-1, disable"
+      ];
+      "exec-once" = "swaybg -c 000000";
       "$mod" = "SUPER";
+      general = {
+        "gaps_in" = "5";
+        "gaps_out" = "0";
+        "border_size" = "2";
+        "col.active_border" = "rgb(a7c080)";
+        "col.inactive_border" = "rgb(2f383e)";
+      };
       decoration = {
         "rounding" = "8";
         shadow = {
-          "enabled" = "true";
-          "range" = "4";
+          "enabled" = "false";
+        };
+        blur = {
+          "enabled" = "false";
         };
       };
       misc = {
@@ -22,11 +35,16 @@
         "$mod, C, killactive"
         "$mod, M, exit"
         "$mod, D, exec, fuzzel"
+        "$mod, S, exec, spotify_player"
         "$mod ALT_L, L, exec, hyprlock"
-        "$mod, h, movefocus, l"
-        "$mod, j, movefocus, d"
-        "$mod, k, movefocus, u"
-        "$mod, l, movefocus, r"
+        "$mod, H, movefocus, l"
+        "$mod, J, movefocus, d"
+        "$mod, K, movefocus, u"
+        "$mod, L, movefocus, r"
+        "$mod SHIFT, H, movewindow, l"
+        "$mod SHIFT, J, movewindow, d"
+        "$mod SHIFT, K, movewindow, u"
+        "$mod SHIFT, L, movewindow, r"
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
         "$mod, 3, workspace, 3"
@@ -48,7 +66,10 @@
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
       ];
-      bindm = [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
+      bindm = [
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
+      ];
     };
   };
 
