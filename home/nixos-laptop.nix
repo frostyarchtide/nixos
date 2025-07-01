@@ -12,6 +12,7 @@
     ./kitty.nix
     ./librewolf.nix
     ./nixvim.nix
+    ./spotify-player.nix
     ./ssh.nix
     ./user.nix
   ];
