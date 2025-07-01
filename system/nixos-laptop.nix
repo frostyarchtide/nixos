@@ -24,6 +24,6 @@
   nixpkgs.config.allowUnfree = true;
 
   environment = {
-    systemPackages = with pkgs; [ bluetui discord fastfetch git ];
+    systemPackages = with pkgs; [ bluetui discord fastfetch git ncpamixer ];
   };
 }
