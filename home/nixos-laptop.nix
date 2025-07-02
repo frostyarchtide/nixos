@@ -8,6 +8,7 @@
     ./fonts.nix
     ./fuzzel.nix
     ./home-manager.nix
+    ./hypridle.nix
     ./hyprland.nix
     ./hyprlock.nix
     ./kitty.nix
