@@ -3,6 +3,7 @@
 {
   imports = [
     ./bash.nix
+    ./capitaine-cursors.nix
     ./direnv.nix
     ./fonts.nix
     ./fuzzel.nix
