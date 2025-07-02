@@ -31,6 +31,7 @@
       bufferline.enable = true;
       guess-indent.enable = true;
       lualine.enable = true;
+      nvim-autopairs.enable = true;
       telescope = {
         enable = true;
         extensions.fzf-native.enable = true;
