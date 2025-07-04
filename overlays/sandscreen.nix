@@ -1,7 +1,7 @@
 final: prev: {
   sandscreen = prev.stdenv.mkDerivation rec {
     pname = "sandscreen";
-    version = "1.0.1";
+    version = "1.0.2";
 
     src = prev.fetchFromGitHub {
       owner = "frostyarchtide";
