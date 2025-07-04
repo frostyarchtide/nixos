@@ -7,7 +7,7 @@ final: prev: {
       owner = "frostyarchtide";
       repo = "sandscreen";
       rev = "v${version}";
-      sha256 = "sha256-+wjuq+gd7zGhtHNRSL4UBM7puJgIN0RsdHd/7/FMEYU=";
+      sha256 = "sha256-iEDVharT1C28Wm7JlSqRrISqBNJv7Y2soaaJX1oX+Ro=";
     };
 
     nativeBuildInputs = [ prev.cmake ];
