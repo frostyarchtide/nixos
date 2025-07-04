@@ -26,8 +26,6 @@
   services.greetd.settings.default_session.command =
     lib.mkForce "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --remember-session --cmd Hyprland";
 
-  nixpkgs.config.allowUnfree = true;
-
   environment = {
     systemPackages = with pkgs; [
       bluetui
@@ -36,6 +34,7 @@
       git
       ncpamixer
       nixfmt-rfc-style
+      sandscreen
       swaybg
     ];
   };

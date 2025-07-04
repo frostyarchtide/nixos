@@ -8,7 +8,10 @@
         "DP-1, 3440x1440@60, 0x0, 1"
         "eDP-1, disable"
       ];
-      "exec-once" = "swaybg -c 000000";
+      exec-once = [
+        "swaybg -c 000000"
+        "waybar"
+      ];
       "$mod" = "SUPER";
       general = {
         "gaps_in" = "5";

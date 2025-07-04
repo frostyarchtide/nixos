@@ -26,8 +26,11 @@
     }@inputs:
     let
       system = "x86_64-linux";
+      overlays = [
+        (import ./overlays/sandscreen.nix)
+      ];
       pkgs = import nixpkgs {
-        inherit system;
+        inherit system overlays;
         config.allowUnfree = true;
       };
       lib = nixpkgs.lib;
@@ -44,6 +47,7 @@
               home-manager.users.frosty.imports = [ ./home/nixos-laptop.nix ];
             }
           ];
+          pkgs = pkgs;
         };
       };
     };

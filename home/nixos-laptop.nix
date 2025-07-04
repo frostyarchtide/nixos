@@ -17,5 +17,6 @@
     ./spotify-player.nix
     ./ssh.nix
     ./user.nix
+    ./waybar.nix
   ];
 }
