@@ -16,6 +16,7 @@
     ./greetd.nix
     ./networking.nix
     ./steam.nix
+    ./tailscale.nix
     ./users.nix
     ./version.nix
   ];
